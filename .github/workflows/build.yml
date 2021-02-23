@@ -188,7 +188,7 @@ jobs:
         pip install --no-cache-dir wheel numpy==${NUMPY_VERSION}
         pip wheel . -w dist --no-deps --verbose
         ls -lh dist
-    - name: Install and test
+    - name: Install and test faiss
       if: matrix.python-version != 3.9 && matrix.opt != 'avx2'
       run: |
         pip install --no-cache-dir dist/faiss*.whl
